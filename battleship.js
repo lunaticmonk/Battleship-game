@@ -68,6 +68,10 @@ fiat.start();
 fiat.addFuel(10);
 fiat.drive();
 fiat.drive();
+	displayHit: function(msg){
+		var hit = document.
+	}
+	
 fiat.drive();
 fiat.drive();
 fiat.drive();
@@ -79,8 +83,46 @@ fiat.drive();
 fiat.drive();
 */
 
-function init(){
-	alert("The page has been loaded.")
+
+var view = {
+	displayMessage: function(msg){
+		var messageArea = document.getElementById('messageArea');
+		messageArea.innerHTML = msg;
+	},
+	displayHit: function(location){
+		var cell = document.getElementById('location');
+		cell.setAttribute("class","hit");
+	},
+	displayMiss: function(location){
+		var cell = document.getElementById('location');
+		cell.setAttribute("class","miss");
+	},
+
+};	
+function parseGuess(guess){
+	var alphabet = ["A","B","C","D","E","F","G"];
+	if(guess === null || guess.length!==2){
+		alert("Oops you dont seem to be interested!Please enter a letter and a number");
+	}
+	else
+	{
+		var firstChar = guess.charAt(0);
+		var row = alphabet.indexOf(firstChar);
+		var coloumn = guess.charAt(1);
+
+		if(isNaN(row) || isNaN(coloumn)){
+			alert("Oops,The input isnt on the board");
+		}
+		else if(row < 0 || row >6 || coloumn<0 || coloumn >6)
+			alert("Think you should read the instructions first");
+		else
+			return row+coloumn;
+	}
+
+	return null;
 }
 
-window.onload = init;
+console.log(parseGuess("A0"));
+console.log(parseGuess("B7"));
+console.log(parseGuess("C3"));
+console.log(parseGuess("D4"));
