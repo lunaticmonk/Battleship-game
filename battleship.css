@@ -17,7 +17,6 @@ body{
 	width:600px;
 	height:50px;
 	font-size: 2em;
-	background-color: #fff;
 	color:rgb(83,175,19);
 }
 
@@ -62,8 +61,10 @@ form input {
 	
 }
 
-.miss{
+.miss{	
 	width:90px;
 	height:90px;
+	margin:0 auto;
 	background: url(img/miss.jpg) no-repeat center center;
+	padding:2px;
 }
