@@ -68,3 +68,7 @@ form input {
 	background: url(img/miss.jpg) no-repeat center center;
 	padding:2px;
 }
+
+.instructions{
+	color: #fff;
+}
